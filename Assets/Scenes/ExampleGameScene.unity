@@ -1853,7 +1853,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: quit
+  m_Text: Game Over
 --- !u!222 &496982052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2797,12 +2797,12 @@ GameObject:
   - component: {fileID: 626901815}
   - component: {fileID: 626901814}
   m_Layer: 5
-  m_Name: Pause Text
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &626901813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5881,11 +5881,23 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 600870254}
         m_TargetAssemblyTypeName: UiBehaviour, Assembly-CSharp
-        m_MethodName: OnExitButtonPressed
-        m_Mode: 1
+        m_MethodName: CanvasSwitch
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 626901812}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 600870254}
+        m_TargetAssemblyTypeName: UiBehaviour, Assembly-CSharp
+        m_MethodName: CanvasSwitch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2113712285}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
