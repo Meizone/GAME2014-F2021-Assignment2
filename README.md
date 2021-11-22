@@ -1,5 +1,5 @@
 GAME2014-F2021-Assignment2
 
-Assets Added GDD To be Added soon
+GDD Added
 
 https://www.youtube.com/watch?v=-9sir1mz1kU
