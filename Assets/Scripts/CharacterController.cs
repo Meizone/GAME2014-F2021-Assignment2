@@ -55,8 +55,11 @@ public class CharacterController : MonoBehaviour {
         if(!HitLagAfterDamage)
             rigidbody.velocity = new Vector2(inputX * m_speed, rigidbody.velocity.y);
 
+        // Pass Air Velocity to Animator
+        animatorController.SetFloat("AirSpeedY", rigidbody.velocity.y);
 
-        //Check if character just landed on the ground
+
+        // Check if Grounded or not
         if (isGrounded)
         {
             animatorController.SetBool("Grounded", isGrounded);
@@ -67,10 +70,7 @@ public class CharacterController : MonoBehaviour {
         }
 
 
-
-
-
-        //Swap Direction Facing
+        //Direction Swapping
         if (inputX > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
@@ -83,29 +83,9 @@ public class CharacterController : MonoBehaviour {
             Direction = -1;
         }
 
-
-        //Set AirSpeed in animator
-        animatorController.SetFloat("AirSpeedY", rigidbody.velocity.y);
-
-        //Attack
-        if(Input.GetMouseButtonDown(0))
-        {
-
-            // Call one of three attack animations "Attack1", "Attack2", "Attack3"
-            animatorController.SetTrigger("Attack" + 1);
-
-            // Detect Enemies in Range of Attack
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            // Damage 
-            foreach(Collider2D enemy in hitEnemies)
-            {
-                enemy.GetComponent<EnemyController>().EnemyDamage();
-            }
-        }
             
         //Jump
-        else if (inputY >= .5f && isGrounded)
+        if (inputY >= .5f && isGrounded)
         {
             animatorController.SetTrigger("Jump");
             isGrounded = false;
@@ -173,6 +153,23 @@ public class CharacterController : MonoBehaviour {
     {
         yield return new WaitForSeconds(KBTime);
         HitLagAfterDamage = false;
+    }
+
+
+    public void Attack()
+    {
+
+        // Call one of three attack animations "Attack1", "Attack2", "Attack3"
+        animatorController.SetTrigger("Attack" + 1);
+
+        // Detect Enemies in Range of Attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Damage 
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyController>().EnemyDamage();
+        }
     }
 
 
