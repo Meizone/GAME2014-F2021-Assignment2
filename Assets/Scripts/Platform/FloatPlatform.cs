@@ -31,7 +31,6 @@ public class FloatPlatform : MonoBehaviour
         PlayerOntop = false;
         timeSinceOn = 0.0f;
     }
-//Test
 
     void Update()
     {
