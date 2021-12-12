@@ -65,6 +65,7 @@ public class EnemyController : MonoBehaviour
         if(Health == 0)
         {
             FindObjectOfType<GameManager>().SetGold(50);
+            FindObjectOfType<GameManager>().EnemyKilled();
             Destroy(gameObject);
         }
 

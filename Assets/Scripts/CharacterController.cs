@@ -147,6 +147,15 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Death")
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+    }
+
     // Lag the Player Input
     private IEnumerator HitLag()
     {

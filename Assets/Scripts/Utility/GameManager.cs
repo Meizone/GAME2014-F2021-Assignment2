@@ -56,6 +56,16 @@ public class GameManager : MonoBehaviour
         GoldCount.text = "" + Gold;
     }
 
+    public void EnemyKilled()
+    {
+        KilledEnemies += 1;
+
+        if(KilledEnemies == 5)
+        {
+            GameOver();
+        }
+    }
+
     public void GameOver()
     {
         Time.timeScale = 0.0f;
