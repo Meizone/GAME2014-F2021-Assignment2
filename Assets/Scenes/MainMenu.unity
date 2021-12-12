@@ -190,8 +190,7 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
 --- !u!1 &46502595
 GameObject:
@@ -654,7 +653,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ExampleGameScene
+          m_StringArgument: GameScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &350664093

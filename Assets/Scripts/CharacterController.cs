@@ -4,6 +4,10 @@ using System.Collections;
 public class CharacterController : MonoBehaviour {
 
 
+
+    [Header("Movement")]
+    [SerializeField] public Joystick joystick;
+
     [Header("Forces")]
     [SerializeField] float m_speed = 4.0f;
     [SerializeField] float m_jumpForce = 7.5f;
@@ -41,6 +45,17 @@ public class CharacterController : MonoBehaviour {
     {
 
         groundCheck();
+        //Get Horizontal Movement from User
+        //float inputX = Input.GetAxis("Horizontal");
+        float inputX = joystick.Horizontal;
+        float inputY = joystick.Vertical;
+
+
+        // Check if the Player was just Hit by an enemy
+        if(!HitLagAfterDamage)
+            rigidbody.velocity = new Vector2(inputX * m_speed, rigidbody.velocity.y);
+
+
         //Check if character just landed on the ground
         if (isGrounded)
         {
@@ -51,12 +66,9 @@ public class CharacterController : MonoBehaviour {
             animatorController.SetBool("Grounded", isGrounded);
         }
 
-        //Get Horizontal Movement from User
-        float inputX = Input.GetAxis("Horizontal");
 
-        // Check if the Player was just Hit by an enemy
-        if(!HitLagAfterDamage)
-            rigidbody.velocity = new Vector2(inputX * m_speed, rigidbody.velocity.y);
+
+
 
         //Swap Direction Facing
         if (inputX > 0)
@@ -93,7 +105,7 @@ public class CharacterController : MonoBehaviour {
         }
             
         //Jump
-        else if (Input.GetKeyDown("space") && isGrounded)
+        else if (inputY >= .5f && isGrounded)
         {
             animatorController.SetTrigger("Jump");
             isGrounded = false;

@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         KilledEnemies += 1;
 
-        if(KilledEnemies == 5)
+        if(KilledEnemies == 4)
         {
             GameOver();
         }
