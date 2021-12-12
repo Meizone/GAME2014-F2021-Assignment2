@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Enemy
   - Death
+  - Coin
   layers:
   - Default
   - TransparentFX

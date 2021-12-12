@@ -146,6 +146,12 @@ public class CharacterController : MonoBehaviour {
         {
             FindObjectOfType<GameManager>().GameOver();
         }
+
+        if(col.gameObject.tag == "Coin")
+        {
+            FindObjectOfType<GameManager>().SetGold(100);
+            Destroy(col.gameObject);
+        }
     }
 
     // Lag the Player Input
