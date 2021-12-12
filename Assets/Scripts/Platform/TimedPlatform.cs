@@ -30,5 +30,10 @@ public class TimedPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D col)
     {
         TimeOnPlatform = 0f;
+        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer sr in spriteRenderers)
+        {
+            sr.color = new Color(1,1,1, 1);
+        }
     }
 }
