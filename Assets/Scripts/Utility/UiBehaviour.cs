@@ -67,5 +67,12 @@ public class UiBehaviour : MonoBehaviour
     }
 
 
+    public void ButtonGeneralRestartTimePressed(string SceneSelect)
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneSelect);
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
 }
