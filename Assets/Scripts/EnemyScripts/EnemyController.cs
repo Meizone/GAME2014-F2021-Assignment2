@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
             FindObjectOfType<GameManager>().EnemyKilled();
             Destroy(gameObject);
         }
-
+        AudioManager.Play("EnemyHit");
         // Disable Input Ability while applying Knockback
         HitLagAfterDamage = true;
         Vector2 direction = FindObjectOfType<CharacterController>().transform.position - transform.position;

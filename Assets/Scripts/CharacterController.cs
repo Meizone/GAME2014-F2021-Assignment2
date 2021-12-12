@@ -45,6 +45,9 @@ public class CharacterController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        AudioManager.Stop("MenuBGM");
+        AudioManager.Play("OverworldBGM");
+
         animatorController = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
@@ -90,6 +93,7 @@ public class CharacterController : MonoBehaviour {
         //Jump
         if (inputY >= .5f && isGrounded)
         {
+            AudioManager.Play("Jump");
             animatorController.SetTrigger("Jump");
             isGrounded = false;
             animatorController.SetBool("Grounded", isGrounded);
@@ -130,6 +134,7 @@ public class CharacterController : MonoBehaviour {
         if(col.gameObject.tag == "Enemy")
         {
             // Disable Input Ability while applying Knockback
+            AudioManager.Play("PlayerHit");
             HitLagAfterDamage = true;
             Vector2 direction = col.transform.position - transform.position;
             direction = direction.normalized * knockback;
@@ -152,6 +157,7 @@ public class CharacterController : MonoBehaviour {
 
         if(col.gameObject.tag == "Coin")
         {
+            AudioManager.Play("CoinPickup");
             FindObjectOfType<GameManager>().SetGold(100);
             Destroy(col.gameObject);
         }

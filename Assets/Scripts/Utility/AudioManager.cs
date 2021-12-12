@@ -70,4 +70,10 @@ public class AudioManager : MonoBehaviour
 		s.source.Play();
 	}
 
+    public static void Stop(string sound)
+    {
+        Sound s = Array.Find(instance.sounds, item => item.name == sound);
+		s.source.Stop();
+    }
+
 }
