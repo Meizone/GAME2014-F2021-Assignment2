@@ -1,3 +1,14 @@
+/*
+Nathan Nguyen
+101268067
+
+12/11/2021
+Timed Platforms
+
+
+*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

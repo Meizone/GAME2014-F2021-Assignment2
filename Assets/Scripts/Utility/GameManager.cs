@@ -1,3 +1,14 @@
+/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+
+Game Manager
+
+
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

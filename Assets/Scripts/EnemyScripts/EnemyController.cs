@@ -1,3 +1,13 @@
+/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+Enemy Controllers Developped through Labs
+
+
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,14 @@
+/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+
+Sound System
+
+
+*/
+
 using UnityEngine.Audio;
 using UnityEngine;
 

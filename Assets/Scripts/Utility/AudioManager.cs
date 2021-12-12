@@ -1,3 +1,13 @@
+/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+Audio Manager used in A1 and learned through breckys
+Created Static instance
+
+
+*/
 using System.Collections;
 using System.Collections.Generic;
 using System;

@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+
+Character Controller
+
+
+*/
+
+using UnityEngine;
 using System.Collections;
 
 public class CharacterController : MonoBehaviour {
@@ -18,18 +29,17 @@ public class CharacterController : MonoBehaviour {
     [SerializeField] ContactFilter2D groundCheckFilter;
     [SerializeField] private bool isGrounded = false;
 
-    private Animator animatorController;
-    private Rigidbody2D rigidbody;
-    
-    private int Direction = 1;
-    private Collider2D collider;
-
 
     [Header("Combat")]
     [SerializeField] bool HitLagAfterDamage = false;
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayers;
+
+    private Animator animatorController;
+    private Rigidbody2D rigidbody;
+    private int Direction = 1;
+    private Collider2D collider;
 
 
     // Use this for initialization
@@ -55,19 +65,12 @@ public class CharacterController : MonoBehaviour {
         if(!HitLagAfterDamage)
             rigidbody.velocity = new Vector2(inputX * m_speed, rigidbody.velocity.y);
 
+
         // Pass Air Velocity to Animator
         animatorController.SetFloat("AirSpeedY", rigidbody.velocity.y);
-
-
         // Check if Grounded or not
-        if (isGrounded)
-        {
-            animatorController.SetBool("Grounded", isGrounded);
-        }
-        else
-        {
-            animatorController.SetBool("Grounded", isGrounded);
-        }
+        animatorController.SetBool("Grounded", isGrounded);
+
 
 
         //Direction Swapping

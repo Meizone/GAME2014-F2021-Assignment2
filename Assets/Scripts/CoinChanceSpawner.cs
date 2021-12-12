@@ -1,3 +1,15 @@
+/*
+Nathan Nguyen
+101268067
+
+12/12/2021
+
+Coin Chance Spawners
+
+
+*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
